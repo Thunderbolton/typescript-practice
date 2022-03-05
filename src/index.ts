@@ -23,5 +23,37 @@ people = [
 ]
 
 // Union - variables that can hold more than one type
-let code: string | boolean
+let code: string | boolean | number
 code = true
+
+
+// Enum - to define a set of named constants that auto-increment. They increment by default, or we can initalise them to increment. 
+
+enum Direction {
+    Up = 1,
+    Down, // = 2
+    Left, // = 3
+    Right, // = 4
+}
+// constants can be accessed from the enum itself: Direction.Up 
+
+// enums can also have strings
+enum Direction2 {
+    Up = 'Up',
+    Down = 'Down',
+    Left = 'Left',
+    Right = 'Right'
+}
+
+// Objects
+// Object types can be set first like this:
+type User = {
+    id: number
+    name: string
+}
+// and then used:
+const user: User = {
+    id: 1,
+    name: 'Tom'
+}
+

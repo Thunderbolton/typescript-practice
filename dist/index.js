@@ -22,3 +22,25 @@ people = [
 // Union - variables that can hold more than one type
 let code;
 code = true;
+// Enum - to define a set of named constants that auto-increment. They increment by default, or we can initalise them to increment. 
+var Direction;
+(function (Direction) {
+    Direction[Direction["Up"] = 1] = "Up";
+    Direction[Direction["Down"] = 2] = "Down";
+    Direction[Direction["Left"] = 3] = "Left";
+    Direction[Direction["Right"] = 4] = "Right";
+})(Direction || (Direction = {}));
+// constants can be accessed from the enum itself: Direction.Up 
+// enums can also have strings
+var Direction2;
+(function (Direction2) {
+    Direction2["Up"] = "Up";
+    Direction2["Down"] = "Down";
+    Direction2["Left"] = "Left";
+    Direction2["Right"] = "Right";
+})(Direction2 || (Direction2 = {}));
+// and then used:
+const user = {
+    id: 1,
+    name: 'Tom'
+};
