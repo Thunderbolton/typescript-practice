@@ -44,3 +44,25 @@ const user = {
     id: 1,
     name: 'Tom'
 };
+// Type assertion -- used to set the type of a value explicitly which allows for more certainty in the code (without the compilier inferring a type)
+let pid = 1;
+let pid1 = 'hello';
+//type assertion method #1
+let productId = pid;
+// method #2
+let productId1 = pid1;
+// Functions
+// Parameter types are set, as well as the return type (which goes after the parameters):
+function addNum(x, y) {
+    return x + y;
+}
+// For functions that do not return any values, use 'void'
+function log(message) {
+    console.log(message);
+}
+const user1 = {
+    id: 1,
+    name: 'James',
+    isOnline: true
+};
+// Interfaces work better with objects and method objects, and types are better to work with functions, complex types, etc. Interfaces cannot be used with primitives or unions. 

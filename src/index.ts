@@ -46,7 +46,7 @@ enum Direction2 {
 }
 
 // Objects
-// Object types can be set first like this:
+// Object types can be set first like this, using a 'type alias':
 type User = {
     id: number
     name: string
@@ -57,3 +57,43 @@ const user: User = {
     name: 'Tom'
 }
 
+// Type assertion -- used to set the type of a value explicitly which allows for more certainty in the code (without the compilier inferring a type)
+let pid: any = 1
+let pid1: any = 'hello'
+
+//type assertion method #1
+let productId = <number>pid
+
+// method #2
+let productId1 = pid1 as string
+
+
+// Functions
+
+// Parameter types are set, as well as the return type (which goes after the parameters):
+function addNum(x: number, y: number ): number {
+    return x + y
+}
+
+// For functions that do not return any values, use 'void'
+function log(message: string | boolean): void {
+    console.log(message)
+}
+
+
+// Interfaces -- the structure of a certain object or function. Often times used to describe objects
+
+interface UserInterface {
+    id: number
+    name: string
+    readonly isOnline: boolean //
+    age?: number // we can use a ? to represent an optional property.
+}
+
+const user1: UserInterface = {
+    id: 1,
+    name: 'James',
+    isOnline: true
+}
+
+// Interfaces work better with objects and method objects, and types are better to work with functions, complex types, etc. Interfaces cannot be used with primitives or unions. 
