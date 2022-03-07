@@ -97,3 +97,11 @@ const user1: UserInterface = {
 }
 
 // Interfaces work better with objects and method objects, and types are better to work with functions, complex types, etc. Interfaces cannot be used with primitives or unions. 
+
+// Interfaces can also be used with functions:
+interface MathFunc {
+    (x: number, y: number): number
+}
+
+const add: MathFunc = (x: number, y: number): number => x + y;
+const multiply: MathFunc = (x: number, y: number): number => x * y;
