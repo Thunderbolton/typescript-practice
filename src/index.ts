@@ -105,3 +105,40 @@ interface MathFunc {
 
 const add: MathFunc = (x: number, y: number): number => x + y;
 const multiply: MathFunc = (x: number, y: number): number => x * y;
+
+// Classes 
+class Person {
+    // class property types are set:
+    id: number
+    name: string
+
+    // they are then assigned using the constructor function with the 'this' keyword
+    constructor(id: number, name: string) {
+        this.id = id
+        this.name = name
+    }
+}
+
+const john = new Person(1, 'john smith')
+const jane = new Person(2, 'jane doe')
+
+// Data/access modifiers
+// These are a way to control the access of properties in a class.
+// 3 modifiers: Public (default), Private, Protected
+
+// Public - properties can be accessed and modified outside of the class: 
+john.id = 3
+
+
+// Private - properties can not be accessed outside of the contianing class. 
+
+// class Person {
+//     private id: number // the access modifier is put before the property
+// }
+
+
+// Protected - similar to private, but properties can be accessed if there is an extended class.
+
+// class Person {
+//     protected id: number 
+// }
