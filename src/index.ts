@@ -106,6 +106,8 @@ interface MathFunc {
 const add: MathFunc = (x: number, y: number): number => x + y;
 const multiply: MathFunc = (x: number, y: number): number => x * y;
 
+
+
 // Classes 
 class Person {
     // class property types are set:
@@ -121,6 +123,23 @@ class Person {
 
 const john = new Person(1, 'john smith')
 const jane = new Person(2, 'jane doe')
+
+// Classes can also utilise interfaces, using the following syntax:
+// class Person implements PersonInterface -- the name of the interface
+
+// Classes can also be extended, also known as 'subclasses'
+class Relative extends Person {
+    relation: string
+
+    constructor(id: number, name: string, relation: string) {
+        super(id, name) // don't need 'this' syntax as it's already initialised in the Person class.
+        this.relation = relation// is intialised here. 
+    }
+}
+
+const rel = new Relative(1, 'John', 'Father')
+
+
 
 // Data/access modifiers
 // These are a way to control the access of properties in a class.

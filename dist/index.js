@@ -77,6 +77,16 @@ class Person {
 }
 const john = new Person(1, 'john smith');
 const jane = new Person(2, 'jane doe');
+// Classes can also utilise interfaces, using the following syntax:
+// class Person implements PersonInterface -- the name of the interface
+// Classes can also be extended, also known as 'subclasses'
+class Relative extends Person {
+    constructor(id, name, relation) {
+        super(id, name); // don't need 'this' syntax as it's already initialised in the Person class.
+        this.relation = relation; // is intialised here. 
+    }
+}
+const rel = new Relative(1, 'John', 'Father');
 // Data/access modifiers
 // These are a way to control the access of properties in a class.
 // 3 modifiers: Public (default), Private, Protected
