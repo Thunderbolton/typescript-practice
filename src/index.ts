@@ -142,6 +142,7 @@ const rel = new Relative(1, 'John', 'Father')
 
 
 // Data/access modifiers
+
 // These are a way to control the access of properties in a class.
 // 3 modifiers: Public (default), Private, Protected
 
@@ -161,3 +162,36 @@ john.id = 3
 // class Person {
 //     protected id: number 
 // }
+
+
+
+// Generics
+
+// Generics offer a way to create reusable components. They allow us to not be restricted by one data type.
+// Components can be called or used with a variety of data types
+
+// Uses a type variable to specify the type: 'T'
+
+
+// Function WITHOUT generic
+
+// function getArray(items: any[]): any[] { // any data type can be passed in. 
+//     return new Array().concat(items)
+// }
+
+// let strArray = getArray(['John', 'James', 'Bill'])
+// let numArray = getArray([1, 2, 3])
+
+// numArray.push('Matt') -- a string is passed to the numArray, but as 'any' was specified above, this won't give an error.
+
+
+// Function WITH generic
+
+function getArray<T>(items: T[]): T[] { // 'T' is the type variable. It's specified with the function in angle brackets, and used to specify the function arguments and return value. 
+    return new Array().concat(items)
+}
+
+let strArray = getArray<string>(['John', 'James', 'Bill'])
+let numArray = getArray<number>([1, 2, 3])
+
+// numArray.push('Matt') // a string is passed, but now this gives an error.

@@ -100,3 +100,21 @@ john.id = 3;
 // class Person {
 //     protected id: number 
 // }
+// Generics
+// Generics offer a way to create reusable components. They allow us to not be restricted by one data type.
+// Components can be called or used with a variety of data types
+// Uses a type variable to specify the type: 'T'
+// Function WITHOUT generic
+// function getArray(items: any[]): any[] { // any data type can be passed in. 
+//     return new Array().concat(items)
+// }
+// let strArray = getArray(['John', 'James', 'Bill'])
+// let numArray = getArray([1, 2, 3])
+// numArray.push('Matt') -- a string is passed to the numArray, but as 'any' was specified above, this won't give an error.
+// Function WITH generic
+function getArray(items) {
+    return new Array().concat(items);
+}
+let strArray = getArray(['John', 'James', 'Bill']);
+let numArray = getArray([1, 2, 3]);
+// numArray.push('Matt') // a string is passed, but now this gives an error.
